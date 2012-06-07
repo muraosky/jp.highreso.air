@@ -58,6 +58,7 @@ package jp.highreso.air {
 		public function dragMove(event:MouseEvent):void {
 			if (_isDrag) {
 				event.updateAfterEvent();
+				// _overwrapを配置することでドラッグ後に下のボタンを押してしまう現象を回避する
 				if (_overwrap == null) {
 					_overwrap = new Sprite();
 					_overwrap.graphics.beginFill(0x000000, 0);
