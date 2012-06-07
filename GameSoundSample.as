@@ -1,18 +1,18 @@
 
 var sound:GameSound = new GameSound();
-sound.playBGM("ƒTƒEƒ“ƒh‚ÌƒŠƒ“ƒP[ƒW–¼");
+sound.playBGM("ã‚µã‚¦ãƒ³ãƒ‰ã®ãƒªãƒ³ã‚±ãƒ¼ã‚¸å");
 
-// ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ª”ñƒAƒNƒeƒBƒu‚É‚È‚Á‚½‚ç
+// ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ãŒéã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã«ãªã£ãŸã‚‰
 stage.addEventListener(Event.DEACTIVATE , OnDeactivateHandler); 
-// ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ªƒAƒNƒeƒBƒu‚É‚È‚Á‚½‚ç
+// ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ãŒã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã«ãªã£ãŸã‚‰
 stage.addEventListener(Event.ACTIVATE, OnActivateHandler);
-// ”ñƒAƒNƒeƒBƒu‚É‚È‚Á‚½‚ç
+// éã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã«ãªã£ãŸã‚‰
 function OnDeactivateHandler(event:Event):void {
 	sound.pauseAll();
-	// ”ñƒAƒNƒeƒBƒu‚ÅI—¹‚·‚é‚Æ‚««
+	// éã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã§çµ‚äº†ã™ã‚‹ã¨ãâ†“
 	// NativeApplication.nativeApplication.exit();
 }
-// ƒAƒNƒeƒBƒu‚É‚È‚Á‚½‚ç
+// ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã«ãªã£ãŸã‚‰
 function OnActivateHandler(event:Event):void {
 	sound.resumeAll();
 }
