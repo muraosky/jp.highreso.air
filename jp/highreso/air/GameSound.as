@@ -54,9 +54,7 @@ package jp.highreso.air {
 		 */
 		public function setVolumeBGM(volume:int):void {
 			volumeBgm = Number(volume) / 100;
-			if (channels[SOUND_CH_BGM] != null) {
-				channels[SOUND_CH_BGM].soundTransform.volume = volumeBgm;
-			}
+			setInternalVolume(SOUND_CH_BGM, volumeBgm);
 		}
 		/**
 		 * ボイスボリューム設定
@@ -64,20 +62,28 @@ package jp.highreso.air {
 		 */
 		public function setVolumeVoice(volume:int):void {
 			volumeVoice = Number(volume) / 100;
-			if (channels[SOUND_CH_VOICE] != null) {
-				channels[SOUND_CH_VOICE].soundTransform.volume = volumeVoice;
-			}
+			setInternalVolume(SOUND_CH_VOICE, volumeVoice);
 		}
 		/**
 		 * SEボリューム設定
 		 * @param	volume	0～100
 		 */
-		public function setVolumeSe(volume:int):void {
+		public function setVolumeSE(volume:int):void {
 			volumeSe = Number(volume) / 100;
 			for (var ch:int = SOUND_CH_SE; ch < SOUND_CH_MAX; ch++) {
-				if (channels[ch] != null) {
-					channels[ch].soundTransform.volume = volumeSe;
-				}
+				setInternalVolume(ch, volumeSe);
+			}
+		}
+		/**
+		 * 内部的なボリュームを設定する
+		 * @param	ch
+		 * @param	volume
+		 */
+		public function setInternalVolume(ch:int, volume:Number):void {
+			if (channels[ch] != null) {
+				var t:SoundTransform = channels[ch].soundTransform;
+				t.volume = volume;
+				channels[ch].soundTransform = t;
 			}
 		}
 		
